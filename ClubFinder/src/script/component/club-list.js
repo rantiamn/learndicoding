@@ -6,11 +6,6 @@ class clubList extends HTMLElement {
       this.render();
   }
 
-  renderError(message) {
-    this.innerHTML = "";
-    this.innerHTML += '<h2 class="placeholder">${message}</h2>';
-  }
-
   render() {
     this.innerHTML = "";
     this._clubs.forEach(club => {
@@ -18,6 +13,11 @@ class clubList extends HTMLElement {
       clubItemElement.club = club
       this.appendChild(clubItemElement);
     })
+  }
+  
+    renderError(message) {
+    this.innerHTML = "";
+    this.innerHTML += '<h2 class="placeholder">${message}</h2>';
   }
 }
 
